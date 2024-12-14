@@ -6,24 +6,23 @@ import {
   resetServerContext,
 } from "react-beautiful-dnd";
 import Column from "../components/column/Column";
-import "../styles/styles.css";
 
 const INITIAL_COLUMN_ORDER = ["column-1", "column-2", "column-3"];
 
 const INITIAL_COL_DATA = {
   "column-1": {
     id: "column-1",
-    title: "Column 1",
+    title: "В работе",
     itemsOrder: ["item-1", "item-2", "item-3"],
   },
   "column-2": {
     id: "column-2",
-    title: "Column 2",
+    title: "На проверке",
     itemsOrder: ["item-4", "item-5"],
   },
   "column-3": {
     id: "column-3",
-    title: "Column 3",
+    title: "Завершено",
     itemsOrder: ["item-6", "item-7", "item-8"],
   },
 };
@@ -106,7 +105,7 @@ export default function Home() {
 
   return (
     <div className="container">
-      <p className="header">Drag & Drop</p>
+      <p className="header">Канбан</p>
       <DragDropContext onDragEnd={handleDragDrop}>
         <Droppable droppableId="ROOT" type="COLUMN" direction="HORIZONTAL">
           {(provided) => (
